@@ -1,0 +1,20 @@
+Processing csv files: output/shift_mock/chain/1.csvWarning: non-fatal error reading adaptation data
+, output/shift_mock/chain/2.csvWarning: non-fatal error reading adaptation data
+, output/shift_mock/chain/3.csvWarning: non-fatal error reading adaptation data
+, output/shift_mock/chain/4.csvWarning: non-fatal error reading adaptation data
+
+
+Checking sampler transitions treedepth.
+Treedepth satisfactory for all transitions.
+
+Checking sampler transitions for divergences.
+No divergent transitions found.
+
+Checking E-BFMI - sampler transitions HMC potential energy.
+E-BFMI satisfactory.
+
+Effective sample size satisfactory.
+
+Split R-hat values satisfactory all parameters.
+
+Processing complete, no problems detected.

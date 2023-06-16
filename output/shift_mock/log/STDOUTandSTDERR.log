@@ -1,0 +1,79 @@
+make: Entering directory '/home/undercover/projects/cmdstan'
+
+--- Translating Stan model to C++ code ---
+bin/stanc  --o=/home/undercover/research/shift-params/model/shift.hpp /home/undercover/research/shift-params/model/shift.stan
+
+--- Compiling, linking C++ code ---
+g++ -std=c++1y -pthread -D_REENTRANT -Wno-sign-compare -Wno-ignored-attributes      -I stan/lib/stan_math/lib/tbb_2020.3/include -flto -fuse-linker-plugin -fdevirtualize-at-ltrans -fweb -fivopts -ftree-loop-linear -floop-strip-mine -floop-block -floop-nest-optimize -ftree-vectorize -ftree-loop-distribution -funroll-loops -floop-unroll-and-jam -fsplit-loops -fvisibility=hidden -fvisibility-inlines-hidden -DSTAN_NO_RANGE_CHECKS -O3 -I src -I stan/src -I stan/lib/rapidjson_1.1.0/ -I lib/CLI11-1.9.1/ -I stan/lib/stan_math/ -I stan/lib/stan_math/lib/eigen_3.3.9 -I stan/lib/stan_math/lib/boost_1.78.0 -I stan/lib/stan_math/lib/sundials_6.1.1/include -I stan/lib/stan_math/lib/sundials_6.1.1/src/sundials    -DBOOST_DISABLE_ASSERTS        -DSTAN_NO_RANGE_CHECKS  -c -Wno-ignored-attributes -fweb -fivopts -ftree-loop-linear -floop-strip-mine -floop-block -floop-nest-optimize -ftree-vectorize -ftree-loop-distribution -funroll-loops -floop-unroll-and-jam -fsplit-loops -fvisibility=hidden -fvisibility-inlines-hidden -flto -fuse-linker-plugin -fdevirtualize-at-ltrans -x c++ -o /home/undercover/research/shift-params/model/shift.o /home/undercover/research/shift-params/model/shift.hpp
+g++ -std=c++1y -pthread -D_REENTRANT -Wno-sign-compare -Wno-ignored-attributes      -I stan/lib/stan_math/lib/tbb_2020.3/include -flto -fuse-linker-plugin -fdevirtualize-at-ltrans -fweb -fivopts -ftree-loop-linear -floop-strip-mine -floop-block -floop-nest-optimize -ftree-vectorize -ftree-loop-distribution -funroll-loops -floop-unroll-and-jam -fsplit-loops -fvisibility=hidden -fvisibility-inlines-hidden -DSTAN_NO_RANGE_CHECKS -O3 -I src -I stan/src -I stan/lib/rapidjson_1.1.0/ -I lib/CLI11-1.9.1/ -I stan/lib/stan_math/ -I stan/lib/stan_math/lib/eigen_3.3.9 -I stan/lib/stan_math/lib/boost_1.78.0 -I stan/lib/stan_math/lib/sundials_6.1.1/include -I stan/lib/stan_math/lib/sundials_6.1.1/src/sundials    -DBOOST_DISABLE_ASSERTS        -DSTAN_NO_RANGE_CHECKS        -Wl,-L,"/home/undercover/projects/cmdstan/stan/lib/stan_math/lib/tbb" -Wl,-rpath,"/home/undercover/projects/cmdstan/stan/lib/stan_math/lib/tbb"   -flto -fuse-linker-plugin -fdevirtualize-at-ltrans   /home/undercover/research/shift-params/model/shift.o src/cmdstan/main_nochecks.o        -Wl,-L,"/home/undercover/projects/cmdstan/stan/lib/stan_math/lib/tbb" -Wl,-rpath,"/home/undercover/projects/cmdstan/stan/lib/stan_math/lib/tbb"   stan/lib/stan_math/lib/sundials_6.1.1/lib/libsundials_nvecserial.a stan/lib/stan_math/lib/sundials_6.1.1/lib/libsundials_cvodes.a stan/lib/stan_math/lib/sundials_6.1.1/lib/libsundials_idas.a stan/lib/stan_math/lib/sundials_6.1.1/lib/libsundials_kinsol.a  stan/lib/stan_math/lib/tbb/libtbb.so.2 -o /home/undercover/research/shift-params/model/shift
+rm -f /home/undercover/research/shift-params/model/shift.o
+make: Leaving directory '/home/undercover/projects/cmdstan'
+
+real	22m30.280s
+user	21m43.263s
+sys	0m0.802s
+
+real	22m40.725s
+user	21m53.402s
+sys	0m0.895s
+
+real	22m41.381s
+user	21m54.002s
+sys	0m0.909s
+
+real	23m25.018s
+user	22m35.475s
+sys	0m0.895s
+Warning: non-fatal error reading adaptation data
+Warning: non-fatal error reading adaptation data
+Warning: non-fatal error reading adaptation data
+Warning: non-fatal error reading adaptation data
+Inference for Stan model: shift_model
+4 chains: each with iter=(2500,2500,2500,2500); warmup=(2500,2500,2500,2500); thin=(1,1,1,1); 20000 iterations saved.
+
+Warmup took (719, 729, 768, 698) seconds, 49 minutes total
+Sampling took (632, 675, 592, 663) seconds, 43 minutes total
+
+                    Mean     MCSE   StdDev        5%       50%      95%    N_Eff  N_Eff/s    R_hat
+
+lp__            -1.9e+00  2.7e-02  1.3e+00  -4.4e+00  -1.5e+00 -5.3e-01  2.2e+03  8.5e-01  1.0e+00
+accept_stat__       0.93  1.2e-03  9.9e-02      0.73      0.97      1.0  7.2e+03  2.8e+00  1.0e+00
+stepsize__         0.048  2.1e-03  3.0e-03     0.045     0.049    0.052  2.0e+00  7.8e-04  5.4e+12
+treedepth__          3.6  1.5e-02  1.4e+00       2.0       3.0      6.0  8.9e+03  3.5e+00  1.0e+00
+n_leapfrog__          27  2.8e-01  2.6e+01       3.0        15       79  8.7e+03  3.4e+00  1.0e+00
+divergent__         0.00      nan  0.0e+00      0.00      0.00     0.00      nan      nan      nan
+energy__             3.4  3.4e-02  1.8e+00       1.2       3.0      6.7  2.7e+03  1.1e+00  1.0e+00
+
+h                7.0e-01  2.1e-04  7.6e-03   6.9e-01   7.0e-01  7.1e-01  1.3e+03  5.1e-01  1.0e+00
+Omega_b          5.0e-02  2.5e-05  9.3e-04   4.9e-02   5.0e-02  5.2e-02  1.4e+03  5.3e-01  1.0e+00
+Omega_c          2.5e-01  2.4e-04  8.6e-03   2.4e-01   2.5e-01  2.6e-01  1.3e+03  5.1e-01  1.0e+00
+wr               4.2e-05      nan  1.2e-18   4.1e-05   4.1e-05  4.1e-05      nan      nan      nan
+Omega_r          8.5e-05  5.1e-08  1.9e-06   8.2e-05   8.5e-05  8.8e-05  1.3e+03  5.1e-01  1.0e+00
+lambda           4.0e-01  9.9e-05  3.6e-03   3.9e-01   4.0e-01  4.0e-01  1.3e+03  5.1e-01  1.0e+00
+g1               5.7e-02  5.5e-06  2.8e-04   5.6e-02   5.7e-02  5.7e-02  2.6e+03  1.0e+00  1.0e+00
+g2               5.5e-01  3.1e-06  1.6e-04   5.5e-01   5.5e-01  5.5e-01  2.6e+03  1.0e+00  1.0e+00
+zstar            1.1e+03  6.7e-03  2.6e-01   1.1e+03   1.1e+03  1.1e+03  1.6e+03  6.2e-01  1.0e+00
+faketheta[1]     7.0e-01  2.1e-04  7.6e-03   6.9e-01   7.0e-01  7.1e-01  1.3e+03  5.1e-01  1.0e+00
+faketheta[2]     5.0e-02  2.5e-05  9.3e-04   4.9e-02   5.0e-02  5.2e-02  1.4e+03  5.3e-01  1.0e+00
+faketheta[3]     2.5e-01  2.4e-04  8.6e-03   2.4e-01   2.5e-01  2.6e-01  1.3e+03  5.1e-01  1.0e+00
+faketheta[4]     8.5e-05  5.1e-08  1.9e-06   8.2e-05   8.5e-05  8.8e-05  1.3e+03  5.1e-01  1.0e+00
+faketheta[5]     4.0e-01  9.9e-05  3.6e-03   3.9e-01   4.0e-01  4.0e-01  1.3e+03  5.1e-01  1.0e+00
+faketheta[6]     1.1e+03  6.7e-03  2.6e-01   1.1e+03   1.1e+03  1.1e+03  1.6e+03  6.2e-01  1.0e+00
+y1               1.0e+00      nan  4.5e-14   1.0e+00   1.0e+00  1.0e+00      nan      nan      nan
+dy1              3.3e-01  3.4e-04  1.2e-02   3.1e-01   3.3e-01  3.5e-01  1.3e+03  5.1e-01  1.0e+00
+y2               0.0e+00      nan  0.0e+00   0.0e+00   0.0e+00  0.0e+00      nan      nan      nan
+dy2              1.0e+00      nan  4.5e-14   1.0e+00   1.0e+00  1.0e+00      nan      nan      nan
+S[1,1]           2.3e+04  9.4e+00  3.4e+02   2.2e+04   2.3e+04  2.3e+04  1.3e+03  5.1e-01  1.0e+00
+S[1,2]           3.2e+00  1.2e-03  4.2e-02   3.1e+00   3.2e+00  3.3e+00  1.3e+03  5.1e-01  1.0e+00
+sol              3.3e-02  1.2e-05  4.4e-04   3.3e-02   3.3e-02  3.4e-02  1.3e+03  5.1e-01  1.0e+00
+la               3.0e+02  1.4e-03  9.3e-02   3.0e+02   3.0e+02  3.0e+02  4.4e+03  1.7e+00  1.0e+00
+R                1.8e+00  1.4e-04  5.1e-03   1.8e+00   1.8e+00  1.8e+00  1.3e+03  5.1e-01  1.0e+00
+wb               2.4e-02  3.1e-06  1.6e-04   2.4e-02   2.4e-02  2.5e-02  2.6e+03  1.0e+00  1.0e+00
+x[1]             4.0e-04  1.4e-03  9.3e-02  -1.5e-01   1.6e-03  1.5e-01  4.4e+03  1.7e+00  1.0e+00
+x[2]             1.3e-04  1.4e-04  5.1e-03  -8.3e-03   1.7e-04  8.4e-03  1.3e+03  5.1e-01  1.0e+00
+x[3]            -9.5e-07  3.1e-06  1.6e-04  -2.5e-04  -2.7e-06  2.6e-04  2.6e+03  1.0e+00  1.0e+00
+
+Samples were drawn using hmc with nuts.
+For each parameter, N_Eff is a crude measure of effective sample size,
+and R_hat is the potential scale reduction factor on split chains (at 
+convergence, R_hat=1).

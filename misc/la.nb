@@ -1,0 +1,586 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     23871,        578]
+NotebookOptionsPosition[     22706,        550]
+NotebookOutlinePosition[     23141,        567]
+CellTagsIndexPosition[     23098,        564]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"E", 
+    RowBox[{"(", "z", ")"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"e", "[", 
+      RowBox[{"z_", ",", " ", "Ob_", ",", " ", "Oc_", ",", " ", "Or_"}], 
+      "]"}], ":=", 
+     SqrtBox[
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"Ob", "+", "Oc"}], ")"}], "*", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"1", "+", "z"}], ")"}], "3"]}], "+", 
+       RowBox[{"Or", "*", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"1", "+", "z"}], ")"}], "4"]}], "+", 
+       RowBox[{"(", 
+        RowBox[{"1", "-", "Ob", "-", "Oc", "-", "Or"}], ")"}]}]]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", "zstar", " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"g1", "[", 
+      RowBox[{"h_", ",", " ", "Ob_"}], "]"}], ":=", 
+     RowBox[{"0.0783", "*", 
+      FractionBox[
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"Ob", "*", 
+          SuperscriptBox["h", "2"]}], ")"}], 
+        RowBox[{"-", "0.238"}]], 
+       RowBox[{"1", "+", 
+        RowBox[{"39.5", "*", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"Ob", "*", 
+            SuperscriptBox["h", "2"]}], ")"}], "0.763"]}]}]]}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"g2", "[", 
+      RowBox[{"h_", ",", " ", "Ob_"}], "]"}], ":=", 
+     FractionBox["0.560", 
+      RowBox[{"1", "+", 
+       RowBox[{"21.1", "*", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"Ob", "*", 
+           SuperscriptBox["h", "2"]}], ")"}], "1.81"]}]}]]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"zstar", "[", 
+      RowBox[{"h_", ",", " ", "Ob_", ",", " ", "Oc_"}], "]"}], ":=", 
+     RowBox[{"1048", "*", 
+      RowBox[{"(", 
+       RowBox[{"1", "+", 
+        RowBox[{"0.00124", "*", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"Ob", "*", 
+            SuperscriptBox["h", "2"]}], ")"}], 
+          RowBox[{"-", "0.738"}]]}]}], ")"}], "*", 
+      RowBox[{"(", 
+       RowBox[{"1", "+", 
+        RowBox[{
+         RowBox[{"g1", "[", 
+          RowBox[{"h", ",", " ", "Ob"}], "]"}], "*", 
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"Ob", "+", "Oc"}], ")"}], "*", 
+            SuperscriptBox["h", "2"]}], ")"}], 
+          RowBox[{"g2", "[", 
+           RowBox[{"h", ",", " ", "Ob"}], "]"}]]}]}], ")"}]}]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"other", " ", "functions"}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Rb", "[", 
+      RowBox[{"h_", ",", " ", "Ob_"}], "]"}], ":=", 
+     RowBox[{"31500", "*", "Ob", "*", 
+      SuperscriptBox["h", "2"], "*", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        FractionBox["2.7", "2.7255"], ")"}], "4"]}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"f", "[", 
+      RowBox[{"z_", ",", " ", "h_", ",", " ", "Ob_"}], "]"}], " ", ":=", 
+     SqrtBox[
+      RowBox[{"3", "*", 
+       RowBox[{"(", 
+        RowBox[{"1", "+", 
+         FractionBox[
+          RowBox[{"Rb", "[", 
+           RowBox[{"h", ",", " ", "Ob"}], "]"}], 
+          RowBox[{"(", 
+           RowBox[{"1", "+", "z"}], ")"}]]}], ")"}]}]]}], ";"}], 
+   "\[IndentingNewLine]", "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"integrand", " ", "of", " ", 
+     SubscriptBox["l", "a"]}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"dla", "[", 
+      RowBox[{"z_", ",", " ", "h_", ",", " ", "Ob_", ",", "Oc_", ",", "Or_"}],
+       "]"}], " ", ":=", " ", 
+     RowBox[{"1", "/", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"f", "[", 
+         RowBox[{"z", ",", " ", "h", ",", " ", "Ob"}], "]"}], "*", 
+        RowBox[{"e", "[", 
+         RowBox[{"z", ",", " ", "Ob", ",", " ", "Oc", ",", " ", "Or"}], 
+         "]"}]}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"integrand", " ", "of", " ", "R"}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"dR", "[", 
+      RowBox[{"z_", ",", " ", "Ob_", ",", " ", "Oc_", ",", " ", "Or_"}], 
+      "]"}], " ", ":=", " ", 
+     FractionBox["1", 
+      RowBox[{"e", "[", 
+       RowBox[{"z", ",", " ", "Ob", ",", " ", "Oc", ",", " ", "Or"}], 
+       "]"}]]}], ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.88485872099662*^9, 3.88485890879711*^9}, {
+   3.887171570591851*^9, 3.887171579569326*^9}, {3.8871760335791063`*^9, 
+   3.887176164021249*^9}, {3.887176531250692*^9, 3.88717654009583*^9}, {
+   3.8871772196918497`*^9, 3.887177225806048*^9}, 3.88717744686703*^9, {
+   3.887187661396652*^9, 3.887187738674068*^9}, {3.887187814229766*^9, 
+   3.8871879051389637`*^9}, {3.887188208053244*^9, 
+   3.88718823523288*^9}},ExpressionUUID->"56d880ae-d9b1-4a8a-86ac-\
+e0925af873ac"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"dla", "[", 
+    RowBox[{
+    "z", ",", "  ", "h", ",", " ", "Ob", ",", " ", "Oc", ",", " ", "Or"}], 
+    "]"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"z", ",", " ", "0", ",", " ", "\"\<z\>\""}], "}"}], ",", " ", 
+     "0", ",", " ", "4096", ",", " ", 
+     RowBox[{"Appearance", " ", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}], 
+   ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"h", ",", " ", "0.7", ",", " ", "\"\<h\>\""}], "}"}], ",", " ", 
+     "0", ",", " ", "1", ",", " ", 
+     RowBox[{"Appearance", " ", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}], 
+   ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Ob", ",", " ", "0.05", ",", " ", 
+       "\"\<\!\(\*SubscriptBox[\(\[CapitalOmega]\), \(b\)]\)\>\""}], "}"}], 
+     ",", " ", "0", ",", " ", "1", ",", " ", 
+     RowBox[{"Appearance", " ", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}], 
+   ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Oc", ",", " ", "0.25", ",", " ", 
+       "\"\<\!\(\*SubscriptBox[\(\[CapitalOmega]\), \(c\)]\)\>\""}], "}"}], 
+     ",", " ", "0", ",", " ", "1", ",", " ", 
+     RowBox[{"Appearance", " ", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}], 
+   ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Or", ",", " ", "0.0001", ",", " ", 
+       "\"\<\!\(\*SubscriptBox[\(\[CapitalOmega]\), \(r\)]\)\>\""}], "}"}], 
+     ",", " ", "0", ",", " ", "1", ",", " ", 
+     RowBox[{"Appearance", " ", "\[Rule]", " ", "\"\<Labeled\>\""}]}], 
+    "}"}]}], "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->{{3.884858914957409*^9, 3.8848589296994143`*^9}, {
+   3.884858980466525*^9, 3.8848589856041317`*^9}, {3.884859049163361*^9, 
+   3.88485911288623*^9}, {3.884859531030304*^9, 3.884859582264398*^9}, 
+   3.8871714881412086`*^9, {3.8871715211961184`*^9, 3.887171530146141*^9}},
+ CellLabel->"In[66]:=",ExpressionUUID->"67056672-8a6c-4e1d-b4d0-9a2df583fefd"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`h$$ = 0.7, $CellContext`Ob$$ = 
+    0.05, $CellContext`Oc$$ = 0.25, Or$$ = 0.0001, $CellContext`z$$ = 0, 
+    Typeset`show$$ = True, Typeset`bookmarkList$$ = {}, 
+    Typeset`bookmarkMode$$ = "Menu", Typeset`animator$$, Typeset`animvar$$ = 
+    1, Typeset`name$$ = "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`z$$], 0, "z"}, 0, 4096}, {{
+       Hold[$CellContext`h$$], 0.7, "h"}, 0, 1}, {{
+       Hold[$CellContext`Ob$$], 0.05, 
+       "\!\(\*SubscriptBox[\(\[CapitalOmega]\), \(b\)]\)"}, 0, 1}, {{
+       Hold[$CellContext`Oc$$], 0.25, 
+       "\!\(\*SubscriptBox[\(\[CapitalOmega]\), \(c\)]\)"}, 0, 1}, {{
+       Hold[Or$$], 0.0001, 
+       "\!\(\*SubscriptBox[\(\[CapitalOmega]\), \(r\)]\)"}, 0, 1}}, 
+    Typeset`size$$ = {68.765625, {1., 9.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`h$$ = 0.7, $CellContext`Ob$$ = 
+        0.05, $CellContext`Oc$$ = 0.25, Or$$ = 0.0001, $CellContext`z$$ = 0}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> $CellContext`dla[$CellContext`z$$, $CellContext`h$$, \
+$CellContext`Ob$$, $CellContext`Oc$$, Or$$], 
+      "Specifications" :> {{{$CellContext`z$$, 0, "z"}, 0, 4096, Appearance -> 
+         "Labeled"}, {{$CellContext`h$$, 0.7, "h"}, 0, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`Ob$$, 0.05, 
+          "\!\(\*SubscriptBox[\(\[CapitalOmega]\), \(b\)]\)"}, 0, 1, 
+         Appearance -> 
+         "Labeled"}, {{$CellContext`Oc$$, 0.25, 
+          "\!\(\*SubscriptBox[\(\[CapitalOmega]\), \(c\)]\)"}, 0, 1, 
+         Appearance -> "Labeled"}, {{
+         Or$$, 0.0001, "\!\(\*SubscriptBox[\(\[CapitalOmega]\), \(r\)]\)"}, 0,
+          1, Appearance -> "Labeled"}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{283., {98.6875, 104.3125}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.884859113446227*^9, {3.8848595737262278`*^9, 3.8848595864311867`*^9}, {
+   3.887171535743641*^9, 3.8871715526590776`*^9}, 3.8871715851535997`*^9, 
+   3.887172324186548*^9, 3.887174707809319*^9, {3.887176233263398*^9, 
+   3.8871762488619537`*^9}, 3.887176289911627*^9, 3.8871765443889*^9, 
+   3.8871773402129593`*^9, 3.887177507774472*^9, 3.887187741673727*^9},
+ CellLabel->"Out[66]=",ExpressionUUID->"49a97e9a-e7ed-4f76-9f8e-d81abf8212ff"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"dR", "[", 
+    RowBox[{"z", ",", " ", "Ob", ",", " ", "Oc", ",", " ", "Or"}], "]"}], ",",
+    "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"z", ",", " ", "0", ",", " ", "\"\<z\>\""}], "}"}], ",", " ", 
+     "0", ",", " ", "1048", ",", " ", 
+     RowBox[{"Appearance", " ", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}], 
+   ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Ob", ",", " ", "0.05", ",", " ", 
+       "\"\<\!\(\*SubscriptBox[\(\[CapitalOmega]\), \(b\)]\)\>\""}], "}"}], 
+     ",", " ", "0", ",", " ", "1", ",", " ", 
+     RowBox[{"Appearance", " ", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}], 
+   ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Oc", ",", " ", "0.25", ",", " ", 
+       "\"\<\!\(\*SubscriptBox[\(\[CapitalOmega]\), \(c\)]\)\>\""}], "}"}], 
+     ",", " ", "0", ",", " ", "1", ",", " ", 
+     RowBox[{"Appearance", " ", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}], 
+   ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Or", ",", " ", "0.0001", ",", " ", 
+       "\"\<\!\(\*SubscriptBox[\(\[CapitalOmega]\), \(r\)]\)\>\""}], "}"}], 
+     ",", " ", "0", ",", " ", "1", ",", " ", 
+     RowBox[{"Appearance", " ", "\[Rule]", " ", "\"\<Labeled\>\""}]}], 
+    "}"}]}], "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->{{3.8871772772141123`*^9, 3.887177277536497*^9}, {
+  3.887177383244252*^9, 3.887177408319789*^9}, {3.887177465519006*^9, 
+  3.8871774692815*^9}, {3.887177678627408*^9, 3.887177678940387*^9}, {
+  3.887187976516103*^9, 3.887187995712055*^9}},
+ CellLabel->"In[88]:=",ExpressionUUID->"e1429763-1b61-4333-9f8a-17af6ccb33b0"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`Ob$$ = 0.05, $CellContext`Oc$$ = 0.25, 
+    Or$$ = 0.0001, $CellContext`z$$ = 0, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`z$$], 0, "z"}, 0, 1048}, {{
+       Hold[$CellContext`Ob$$], 0.05, 
+       "\!\(\*SubscriptBox[\(\[CapitalOmega]\), \(b\)]\)"}, 0, 1}, {{
+       Hold[$CellContext`Oc$$], 0.25, 
+       "\!\(\*SubscriptBox[\(\[CapitalOmega]\), \(c\)]\)"}, 0, 1}, {{
+       Hold[Or$$], 0.0001, 
+       "\!\(\*SubscriptBox[\(\[CapitalOmega]\), \(r\)]\)"}, 0, 1}}, 
+    Typeset`size$$ = {15.28125, {1., 8.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`Ob$$ = 0.05, $CellContext`Oc$$ = 0.25, 
+        Or$$ = 0.0001, $CellContext`z$$ = 0}, "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, 
+      "Body" :> $CellContext`dR[$CellContext`z$$, $CellContext`Ob$$, \
+$CellContext`Oc$$, Or$$], 
+      "Specifications" :> {{{$CellContext`z$$, 0, "z"}, 0, 1048, Appearance -> 
+         "Labeled"}, {{$CellContext`Ob$$, 0.05, 
+          "\!\(\*SubscriptBox[\(\[CapitalOmega]\), \(b\)]\)"}, 0, 1, 
+         Appearance -> 
+         "Labeled"}, {{$CellContext`Oc$$, 0.25, 
+          "\!\(\*SubscriptBox[\(\[CapitalOmega]\), \(c\)]\)"}, 0, 1, 
+         Appearance -> "Labeled"}, {{
+         Or$$, 0.0001, "\!\(\*SubscriptBox[\(\[CapitalOmega]\), \(r\)]\)"}, 0,
+          1, Appearance -> "Labeled"}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{283., {86.6875, 92.3125}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.8871772779200583`*^9, 3.887177297133843*^9}, 
+   3.887177347144657*^9, {3.887177384305867*^9, 3.887177408901369*^9}, 
+   3.887177469685231*^9, 3.887177511510387*^9, 3.887177679346772*^9, 
+   3.887187745734334*^9, {3.887187977943714*^9, 3.887188005410451*^9}},
+ CellLabel->"Out[88]=",ExpressionUUID->"5c3c252a-c96a-4611-ad37-55f5891bbb33"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"{", "\[IndentingNewLine]", 
+    RowBox[{
+     RowBox[{"Pi", "*", 
+      RowBox[{
+       RowBox[{"NIntegrate", "[", 
+        RowBox[{
+         RowBox[{"dR", "[", 
+          RowBox[{"x2", ",", " ", "Ob", ",", " ", "Oc", ",", " ", "Or"}], 
+          "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"x2", ",", " ", "0", ",", " ", 
+           RowBox[{"zstar", "[", 
+            RowBox[{"h", ",", " ", "Ob", ",", " ", "Oc"}], "]"}]}], "}"}]}], 
+        "]"}], "/", 
+       RowBox[{"NIntegrate", "[", 
+        RowBox[{
+         RowBox[{"dla", "[", 
+          RowBox[{
+          "x1", ",", "  ", "h", ",", " ", "Ob", ",", " ", "Oc", ",", " ", 
+           "Or"}], "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"x1", ",", " ", 
+           RowBox[{"zstar", "[", 
+            RowBox[{"h", ",", " ", "Ob", ",", " ", "Oc"}], "]"}], ",", " ", 
+           "Infinity"}], "}"}]}], "]"}]}]}], ",", "\[IndentingNewLine]", 
+     RowBox[{
+      SqrtBox[
+       RowBox[{"Ob", "+", "Oc"}]], "*", 
+      RowBox[{"NIntegrate", "[", 
+       RowBox[{
+        RowBox[{"dR", "[", 
+         RowBox[{"x2", ",", " ", "Ob", ",", " ", "Oc", ",", " ", "Or"}], 
+         "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"x2", ",", " ", "0", ",", " ", 
+          RowBox[{"zstar", "[", 
+           RowBox[{"h", ",", " ", "Ob", ",", " ", "Oc"}], "]"}]}], "}"}]}], 
+       "]"}]}], ",", "\[IndentingNewLine]", 
+     RowBox[{"zstar", "[", 
+      RowBox[{"h", ",", " ", "Ob", ",", " ", "Oc"}], "]"}]}], 
+    "\[IndentingNewLine]", "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"h", ",", " ", "0.7", ",", " ", "\"\<h\>\""}], "}"}], ",", " ", 
+     "0", ",", " ", "1", ",", " ", 
+     RowBox[{"Appearance", " ", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}], 
+   ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Ob", ",", " ", "0.05", ",", " ", 
+       "\"\<\!\(\*SubscriptBox[\(\[CapitalOmega]\), \(b\)]\)\>\""}], "}"}], 
+     ",", " ", "0", ",", " ", "1", ",", " ", 
+     RowBox[{"Appearance", " ", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}], 
+   ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Oc", ",", " ", "0.25", ",", " ", 
+       "\"\<\!\(\*SubscriptBox[\(\[CapitalOmega]\), \(c\)]\)\>\""}], "}"}], 
+     ",", " ", "0", ",", " ", "1", ",", " ", 
+     RowBox[{"Appearance", " ", "\[Rule]", " ", "\"\<Labeled\>\""}]}], "}"}], 
+   ",", "\[IndentingNewLine]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "Or", ",", " ", "0.0001", ",", " ", 
+       "\"\<\!\(\*SubscriptBox[\(\[CapitalOmega]\), \(r\)]\)\>\""}], "}"}], 
+     ",", " ", "0", ",", " ", "1", ",", " ", 
+     RowBox[{"Appearance", " ", "\[Rule]", " ", "\"\<Labeled\>\""}]}], 
+    "}"}]}], "\[IndentingNewLine]", "]"}]], "Input",
+ CellChangeTimes->{{3.8871765863805523`*^9, 3.887176726616485*^9}, {
+  3.887177479360252*^9, 3.887177484693256*^9}, {3.8871777189549026`*^9, 
+  3.8871777385467663`*^9}, {3.887187578644471*^9, 3.887187597571104*^9}, {
+  3.887188242356881*^9, 3.887188243421665*^9}, {3.887188460589593*^9, 
+  3.887188462327828*^9}, {3.8871886442089987`*^9, 3.8871886457542458`*^9}},
+ CellLabel->"In[91]:=",ExpressionUUID->"a67c005b-336e-4f88-a496-bc0cc92dbe1f"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`h$$ = 0.7, $CellContext`Ob$$ = 
+    0.05, $CellContext`Oc$$ = 0.25, Or$$ = 0.0001, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{{
+       Hold[$CellContext`h$$], 0.7, "h"}, 0, 1}, {{
+       Hold[$CellContext`Ob$$], 0.05, 
+       "\!\(\*SubscriptBox[\(\[CapitalOmega]\), \(b\)]\)"}, 0, 1}, {{
+       Hold[$CellContext`Oc$$], 0.25, 
+       "\!\(\*SubscriptBox[\(\[CapitalOmega]\), \(c\)]\)"}, 0, 1}, {{
+       Hold[Or$$], 0.0001, 
+       "\!\(\*SubscriptBox[\(\[CapitalOmega]\), \(r\)]\)"}, 0, 1}}, 
+    Typeset`size$$ = {201.015625, {3., 9.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`h$$ = 0.7, $CellContext`Ob$$ = 
+        0.05, $CellContext`Oc$$ = 0.25, Or$$ = 0.0001}, 
+      "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> {Pi (NIntegrate[
+           $CellContext`dR[$CellContext`x2, $CellContext`Ob$$, \
+$CellContext`Oc$$, Or$$], {$CellContext`x2, 0, 
+            $CellContext`zstar[$CellContext`h$$, $CellContext`Ob$$, \
+$CellContext`Oc$$]}]/NIntegrate[
+          $CellContext`dla[$CellContext`x1, $CellContext`h$$, \
+$CellContext`Ob$$, $CellContext`Oc$$, Or$$], {$CellContext`x1, 
+           $CellContext`zstar[$CellContext`h$$, $CellContext`Ob$$, \
+$CellContext`Oc$$], Infinity}]), Sqrt[$CellContext`Ob$$ + $CellContext`Oc$$] 
+        NIntegrate[
+          $CellContext`dR[$CellContext`x2, $CellContext`Ob$$, \
+$CellContext`Oc$$, Or$$], {$CellContext`x2, 0, 
+           $CellContext`zstar[$CellContext`h$$, $CellContext`Ob$$, \
+$CellContext`Oc$$]}], 
+        $CellContext`zstar[$CellContext`h$$, $CellContext`Ob$$, \
+$CellContext`Oc$$]}, 
+      "Specifications" :> {{{$CellContext`h$$, 0.7, "h"}, 0, 1, Appearance -> 
+         "Labeled"}, {{$CellContext`Ob$$, 0.05, 
+          "\!\(\*SubscriptBox[\(\[CapitalOmega]\), \(b\)]\)"}, 0, 1, 
+         Appearance -> 
+         "Labeled"}, {{$CellContext`Oc$$, 0.25, 
+          "\!\(\*SubscriptBox[\(\[CapitalOmega]\), \(c\)]\)"}, 0, 1, 
+         Appearance -> "Labeled"}, {{
+         Or$$, 0.0001, "\!\(\*SubscriptBox[\(\[CapitalOmega]\), \(r\)]\)"}, 0,
+          1, Appearance -> "Labeled"}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{283., {86.6875, 92.3125}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.887176638383789*^9, 3.887176659826376*^9}, 
+   3.8871766959227543`*^9, 3.887176727082472*^9, 3.887177342676716*^9, {
+   3.887177486446184*^9, 3.887177513367231*^9}, 3.887177739165347*^9, {
+   3.8871875858676157`*^9, 3.887187600977461*^9}, 3.887187755598793*^9, 
+   3.887187839078451*^9, 3.88718825731024*^9, 3.8871884642555237`*^9, 
+   3.887188742431066*^9},
+ CellLabel->"Out[91]=",ExpressionUUID->"dedaf4ed-d842-4c03-9f41-0f18d02fb116"]
+}, Open  ]],
+
+Cell[BoxData[" "], "Input",
+ CellChangeTimes->{
+  3.887177621551588*^9},ExpressionUUID->"d731474e-7def-4829-bd09-\
+571a3acf5107"]
+},
+WindowSize->{494.25, 682.5},
+WindowMargins->{{Automatic, 6}, {6, Automatic}},
+TaggingRules-><|"TryRealOnly" -> False|>,
+FrontEndVersion->"13.1 for Linux x86 (64-bit) (June 16, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"13b6b60b-6aac-4d10-a83c-76d29f200d1b"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 5006, 143, 608, "Input",ExpressionUUID->"56d880ae-d9b1-4a8a-86ac-e0925af873ac"],
+Cell[CellGroupData[{
+Cell[5589, 167, 2183, 52, 191, "Input",ExpressionUUID->"67056672-8a6c-4e1d-b4d0-9a2df583fefd"],
+Cell[7775, 221, 3079, 58, 222, "Output",ExpressionUUID->"49a97e9a-e7ed-4f76-9f8e-d81abf8212ff"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10891, 284, 1853, 44, 260, "Input",ExpressionUUID->"e1429763-1b61-4333-9f8a-17af6ccb33b0"],
+Cell[12747, 330, 2775, 53, 198, "Output",ExpressionUUID->"5c3c252a-c96a-4611-ad37-55f5891bbb33"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15559, 388, 3380, 83, 420, "Input",ExpressionUUID->"a67c005b-336e-4f88-a496-bc0cc92dbe1f"],
+Cell[18942, 473, 3616, 69, 221, "Output",ExpressionUUID->"dedaf4ed-d842-4c03-9f41-0f18d02fb116"]
+}, Open  ]],
+Cell[22573, 545, 129, 3, 32, "Input",ExpressionUUID->"d731474e-7def-4829-bd09-571a3acf5107"]
+}
+]
+*)
+
