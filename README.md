@@ -1,7 +1,5 @@
 ## About
-Source code for the article "Testing Λ-free f(Q) Cosmology".
-
-Available at (TO-DO).
+Source code for the article [arXiv:2396.10186](https://arxiv.org/abs/2306.10176): "Testing Λ-free f(Q) Cosmology".
 
 This study relies on previous published work, which is available at [jpmvferreira/forecasting-FQ-cosmology-with-SS](https://github.com/jpmvferreira/forecasting-FQ-cosmology-with-SS).
 
@@ -48,7 +46,14 @@ $ pip install -r shift-params/venv/requirements.txt
 ## Citation
 If you used any of the contents available in this repository, or found it useful in any way, you can cite it using the following BibTeX entry:
 ```
-(TO-DO)
+@misc{ferreira2023,
+      title={Testing $\Lambda$-Free f(Q) Cosmology}, 
+      author={José Ferreira and Tiago Barreiro and José P. Mimoso and Nelson J. Nunes},
+      year={2023},
+      eprint={2306.10176},
+      archivePrefix={arXiv},
+      primaryClass={astro-ph.CO}
+}
 ```
 
 
