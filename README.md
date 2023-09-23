@@ -1,5 +1,5 @@
 ## About
-Source code for the article [PhysRevD.108.063521](https://link.aps.org/doi/10.1103/PhysRevD.108.063521), available for free at [arXiv:2396.10186](https://arxiv.org/abs/2306.10176): "Testing Λ-free f(Q) Cosmology".
+Source code for the article [PhysRevD.108.063521](https://link.aps.org/doi/10.1103/PhysRevD.108.063521), available for free at [arXiv:2396.10186](https://arxiv.org/abs/2306.10176), entitled "Testing Λ-free f(Q) Cosmology".
 
 This study relies on previous published work, which is available at [jpmvferreira/forecasting-FQ-cosmology-with-SS](https://github.com/jpmvferreira/forecasting-FQ-cosmology-with-SS).
 
