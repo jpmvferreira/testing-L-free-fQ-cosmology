@@ -1,5 +1,5 @@
 ## About
-Source code for the article [arXiv:2396.10186](https://arxiv.org/abs/2306.10176): "Testing Λ-free f(Q) Cosmology".
+Source code for the article [PhysRevD.108.063521](https://link.aps.org/doi/10.1103/PhysRevD.108.063521), available for free at [arXiv:2396.10186](https://arxiv.org/abs/2306.10176): "Testing Λ-free f(Q) Cosmology".
 
 This study relies on previous published work, which is available at [jpmvferreira/forecasting-FQ-cosmology-with-SS](https://github.com/jpmvferreira/forecasting-FQ-cosmology-with-SS).
 
@@ -46,13 +46,19 @@ $ pip install -r shift-params/venv/requirements.txt
 ## Citation
 If you used any of the contents available in this repository, or found it useful in any way, you can cite it using the following BibTeX entry:
 ```
-@misc{ferreira2023,
-      title={Testing $\Lambda$-Free f(Q) Cosmology}, 
-      author={José Ferreira and Tiago Barreiro and José P. Mimoso and Nelson J. Nunes},
-      year={2023},
-      eprint={2306.10176},
-      archivePrefix={arXiv},
-      primaryClass={astro-ph.CO}
+@article{Ferreira2023,
+  title = {Testing $\Lambda$-free $f(Q)$ cosmology},
+  author = {Ferreira, Jos\'e and Barreiro, Tiago and Mimoso, Jos\'e P. and Nunes, Nelson J.},
+  journal = {Phys. Rev. D},
+  volume = {108},
+  issue = {6},
+  pages = {063521},
+  numpages = {9},
+  year = {2023},
+  month = {Sep},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevD.108.063521},
+  url = {https://link.aps.org/doi/10.1103/PhysRevD.108.063521}
 }
 ```
 
